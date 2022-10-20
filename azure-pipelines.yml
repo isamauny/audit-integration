@@ -22,18 +22,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'scanOutput'
-    artifact: 'sarif.json'
+    targetPath: 'sarif.json'
+    artifact: 'scanOutput'
     publishLocation: 'pipeline'
-
-- task: APIContractSecurityAudit@3
-  displayName: Auditing OAS Files
-  inputs:
-    apiToken: '$(42C_API_TOKEN)'
-    minScore: '70'
-    platformUrl: '$(platformUrl)'
-    logLevel: DEBUG
-    defaultCollectionName: 'Discovered APIs'
-  env:
-    BUILD_REPOSITORY_URI: 'Myproject-testing'
-    BUILD_SOURCEBRANCH: 'ref/heads/12345'
