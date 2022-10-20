@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-  platformUrl: 'https://platform.42crunch.com'
-
 steps:
 - task: NodeTool@0
   displayName: Use Node 12 or higher
