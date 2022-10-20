@@ -18,6 +18,14 @@ steps:
   inputs:
     versionSpec: '=12.0.0'
 
+- task: APIConformanceScanSarifDev@1
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'scanOutput'
+    artifact: 'sarif.json'
+    publishLocation: 'pipeline'
+
 - task: APIContractSecurityAudit@3
   displayName: Auditing OAS Files
   inputs:
