@@ -25,8 +25,7 @@ steps:
     #workingDirectory: # string. Working Directory. 
     #failOnStderr: false # boolean. Fail on Standard Error. Default: false.
   
-- task: PublishPipelineArtifact@1
+- task: PublishPipelineArtifact@0
   inputs:
     targetPath: 'scanreport.sarif'
-    artifact: 'CodeAnalysisLogs'
-    publishLocation: 'pipeline'
+    artifactName: 'CodeAnalysisLogs'
