@@ -19,6 +19,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'sarif.json'
-    artifact: 'scanOutput'
+    targetPath: 'CodeAnalysisLogs'
+    artifact: 'scan.sarif'
     publishLocation: 'pipeline'
