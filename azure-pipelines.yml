@@ -17,6 +17,14 @@ steps:
 
 - task: APIConformanceScanSarifDev@1
 
+# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows.
+- task: CmdLine@2
+  inputs:
+    script: cp sarif.json scanreport.sarif
+  # Advanced
+    #workingDirectory: # string. Working Directory. 
+    #failOnStderr: false # boolean. Fail on Standard Error. Default: false.
+  
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: 'scanreport.sarif'
